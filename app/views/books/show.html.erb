@@ -1,0 +1,14 @@
+<h2>Book Name: </h2>
+<%= @book.name%>
+<br>
+<h2>Author Name: </h2>
+<%= @book.author.name%>
+<br>
+<h2>Published Date: </h2>
+<%= @book.published_at%>
+<br>
+<br>
+<tr>
+  <td><%= link_to "Delete this book", author_book_path(@book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> | </td>
+  <td><%= link_to "Back", author_path(@book.author_id) %></td>
+</tr>

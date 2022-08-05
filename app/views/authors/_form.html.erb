@@ -1,0 +1,17 @@
+<%= form_with model: author do |form| %>
+
+  <div>
+    <% author.errors.full_messages_for(:name).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <br>
+  </div>
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

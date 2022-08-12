@@ -3,6 +3,8 @@
 class Book < ApplicationRecord
   scope :is_old, -> { where('published_at < ?', Date.current - 50.year) }
 
+  enum :category, %i[advanced beginner intermediate medium]
+
   belongs_to :author, class_name: 'Author', foreign_key: 'author_id'
 
   after_initialize do |_book|
